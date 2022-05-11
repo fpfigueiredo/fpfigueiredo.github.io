@@ -1,11 +1,44 @@
-<ul class="nav justify-content-end">
-  {% for item in site.navigation_links %}
-  <li class="nav-item">
-    <a
-      class="nav-link{% if page.url == item.url %} active{% endif %}"
-      href="{{ item.url }}"
-      >{{ item.title }}</a
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex" href="{{ site.baseurl }}/">
+      <img
+        src="{{ site.avatar }}"
+        height="70"
+        class="d-inline-block"
+        style="padding-right: 10px"
+        alt=""
+      />
+      <span class="ml-3"
+        >{{site.title}} <br /><small>{{site.description}}</small></span
+      ></a
     >
-  </li>
-  {% endfor %}
-</ul>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav">
+        {% for item in site.navigation_links %}
+        <li class="nav-item">
+          <a
+            class="nav-link{% if page.url == item.url %} active{% endif %}"
+            href="{{ item.url }}"
+            >{{ item.title }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
