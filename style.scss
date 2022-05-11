@@ -1,0 +1,36 @@
+---
+---
+
+@import "variables";
+
+.post {
+  .comments {
+    margin-top: 10px;
+  }
+
+  .read-more {
+    text-transform: uppercase;
+    font-size: 14px !important;
+    color: $mahogany;
+
+    a {
+      color: $mahogany;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $mahogany;
+    }
+
+    &:hover {
+      color: $mahogany;
+      text-decoration: underline;
+    }
+  }
+
+  .reading-time {
+    text-transform: uppercase;
+    font-size: 14px !important;
+    color: $mahogany;
+  }
+}

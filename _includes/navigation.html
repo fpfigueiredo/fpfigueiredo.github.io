@@ -1,0 +1,11 @@
+<ul class="nav justify-content-end">
+  {% for item in site.navigation_links %}
+  <li class="nav-item">
+    <a
+      class="nav-link{% if page.url == item.url %} active{% endif %}"
+      href="{{ item.url }}"
+      >{{ item.title }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>

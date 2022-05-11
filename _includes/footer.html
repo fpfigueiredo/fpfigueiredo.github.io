@@ -1,0 +1,30 @@
+<!-- Grid container -->
+<div class="container p-4 pb-0">
+  <!-- Section: Social media -->
+  {%- if site.footer_links -%}
+  <section class="mb-4">
+    {%- for footer_link in site.footer_links -%} {%- if footer_link.url contains
+    "://" -%} {%- assign url = footer_link.url -%} {%- else -%} {%- assign url =
+    footer_link.url | relative_url -%} {%- endif -%}
+    <a class="btn btn-primary btn-floating m-1" href="{{ url }}" role="button"
+      ><i
+        class="{{ footer_link.icon | default: 'fa fa-link' }} fa-2x"
+        title="{{ footer_link.title }}"
+      ></i>
+    </a>
+    {%- endfor -%}
+  </section>
+  {%- endif -%}
+  <!-- Section: Social media -->
+</div>
+<!-- Grid container -->
+
+<!-- Copyright -->
+<div class="text-center p-3">
+  {% if site.copyright %} {{ site.copyright | markdownify }} {% else %}
+  <p>
+    &copy; {{ site.time | date: '%Y' }} {{ site.title | default: site.title }}.
+  </p>
+  {% endif %}
+</div>
+<!-- Copyright -->
